@@ -1,0 +1,14 @@
+easy_admin:
+    entities:
+        User:
+            class: AppBundle\Entity\User
+            list:
+                fields: ['id', 'username', 'email', 'enabled', 'locked', 'lastLogin']
+            edit:
+                fields: ['username', 'email', 'enabled', 'locked']
+            new:
+                fields: ['username', 'email', 'password', 'enabled', 'locked']
+        Customer:
+            class: AppBundle\Entity\Customer
+            new:
+                fields: ['user', 'name', 'firstName', 'lastName', 'email', 'phone', 'companyName', 'website']

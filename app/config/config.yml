@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: admin.yml }
 
 framework:
     #esi:             ~
@@ -77,20 +78,5 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\User
-    
-# app/config/config.yml
-easy_admin:
-    entities:
-        User:
-            class: AppBundle\Entity\User
-            list:
-                fields: ['id', 'username', 'email', 'enabled', 'locked', 'lastLogin']
-            edit:
-                fields: ['username', 'email', 'enabled', 'locked']
-            new:
-                fields: ['username', 'email', 'password', 'enabled', 'locked']
-        Customer:
-            class: AppBundle\Entity\Customer
-            new:
-                fields: ['user', 'name', 'firstName', 'lastName', 'email', 'phone', 'companyName', 'website']
+
         
