@@ -1,14 +1,20 @@
 easy_admin:
     entities:
-        User:
+        User: 
+            label: 'Users'
             class: AppBundle\Entity\User
             list:
-                fields: ['id', 'username', 'email', 'enabled', 'locked', 'lastLogin']
-            edit:
-                fields: ['username', 'email', 'enabled', 'locked']
-            new:
-                fields: ['username', 'email', 'password', 'enabled', 'locked']
+                title: "User list"
+                fields: ['id', 'username', 'email', 'lastLogin', 'enabled', 'locked']
+                actions: ['-show']
+            form:
+                fields:
+                    - { property: 'username' }
+                    - { property: 'email', type: 'email' }
+                    - { property: 'plainPassword', type: 'password', label: 'Password' }
+                    - { property: 'enabled', type: 'checkbox' }
+                    - { property: 'locked', type: 'checkbox' }
         Customer:
             class: AppBundle\Entity\Customer
-            new:
+            form:
                 fields: ['user', 'name', 'firstName', 'lastName', 'email', 'phone', 'companyName', 'website']
