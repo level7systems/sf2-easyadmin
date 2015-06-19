@@ -78,5 +78,21 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\User
+    
+stof_doctrine_extensions:
+    default_locale: pl_PL
+    orm:
+        default:
+            tree: false
+            sluggable: true
+            timestampable: true
+    
+vich_uploader:
+    db_driver: orm # or mongodb or propel or phpcr
+    
+    mappings:
+        customer_image:
+            uri_prefix:         /images/customers
+            upload_destination: %kernel.root_dir%/../web/images/customers
 
         

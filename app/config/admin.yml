@@ -16,5 +16,32 @@ easy_admin:
                     - { property: 'locked', type: 'checkbox' }
         Customer:
             class: AppBundle\Entity\Customer
+            list:
+                fields: 
+                    - user
+                    - name
+                    - { property: 'logo', type: 'image', base_path: 'http://localhost/sfEasyAdmin/web/images/customers/' }
+                    - email
+                    - createdAt
+            show:
+                fields:
+                    - user
+                    - name
+                    - { property: 'logo', type: 'image', base_path: 'http://localhost/sfEasyAdmin/web/images/customers/' }
+                    - firstName
+                    - lastname
+                    - email
+                    - phone
+                    - companyName
+                    - website
             form:
-                fields: ['user', 'name', 'firstName', 'lastName', 'email', 'phone', 'companyName', 'website']
+                fields:
+                    - user
+                    - name
+                    - { property: 'logoFile', type: 'file', label: 'Upload logo', help: 'Select file to upload / change logo' }
+                    - firstName
+                    - lastname
+                    - { property: 'email', type: 'email' }
+                    - phone
+                    - companyName
+                    - website
