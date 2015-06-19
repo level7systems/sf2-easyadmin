@@ -11,7 +11,7 @@ easy_admin:
                 fields:
                     - { property: 'username' }
                     - { property: 'email', type: 'email' }
-                    - { property: 'plainPassword', type: 'password', label: 'Password' }
+                    - { property: 'plainPassword', type: 'password', label: 'Password', help: 'Passwords must have at least 8 characters' }
                     - { property: 'enabled', type: 'checkbox' }
                     - { property: 'locked', type: 'checkbox' }
         Customer:
@@ -29,7 +29,7 @@ easy_admin:
                     - name
                     - { property: 'logo', type: 'image', base_path: 'http://localhost/sfEasyAdmin/web/images/customers/' }
                     - firstName
-                    - lastname
+                    - lastName
                     - email
                     - phone
                     - companyName
